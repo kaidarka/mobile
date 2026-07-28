@@ -1,3 +1,5 @@
+import { SkillChip } from '@/components/SkillChip';
+import { StatItem } from '@/components/StatItem';
 import { useState } from 'react';
 import {
   Alert,
@@ -96,42 +98,16 @@ export default function HomeScreen() {
         <Text style={styles.sectionTitle}>Навыки</Text>
 
         <View style={styles.skills}>
-          <Skill label="React" />
-          <Skill label="TypeScript" />
-          <Skill label="React Native" />
-          <Skill label="Expo" />
-          <Skill label="Node.js" />
-          <Skill label="Next" />
-          <Skill label="Redux" />
+          <SkillChip title="React" />
+          <SkillChip title="TypeScript" />
+          <SkillChip title="React Native" />
+          <SkillChip title="Expo" />
+          <SkillChip title="Node.js" />
+          <SkillChip title="Next" />
+          <SkillChip title="Redux" />
         </View>
       </View>
     </ScrollView>
-  );
-}
-
-type StatItemProps = {
-  value: string;
-  label: string;
-};
-
-function StatItem({ value, label }: StatItemProps) {
-  return (
-    <View style={styles.statItem}>
-      <Text style={styles.statValue}>{value}</Text>
-      <Text style={styles.statLabel}>{label}</Text>
-    </View>
-  );
-}
-
-type SkillProps = {
-  label: string;
-};
-
-function Skill({ label }: SkillProps) {
-  return (
-    <View style={styles.skill}>
-      <Text style={styles.skillText}>{label}</Text>
-    </View>
   );
 }
 
@@ -177,19 +153,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 28,
-  },
-  statItem: {
-    flex: 1,
-    alignItems: 'center',
-  },
-  statValue: {
-    fontSize: 18,
-    fontWeight: '700',
-  },
-  statLabel: {
-    marginTop: 4,
-    fontSize: 12,
-    color: '#777777',
   },
   actions: {
     width: '100%',
@@ -241,15 +204,5 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     gap: 10,
     marginTop: 16,
-  },
-  skill: {
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    borderRadius: 999,
-    backgroundColor: '#eeeeee',
-  },
-  skillText: {
-    fontSize: 14,
-    fontWeight: '500',
   },
 });
